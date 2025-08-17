@@ -1,0 +1,25 @@
+
+const miPresupuesto = new Presupuesto();
+
+miPresupuesto.agregarMovimiento(new Movimiento('Salario', 'ingreso', 3000));
+miPresupuesto.agregarMovimiento(new Movimiento('Freelance', 'ingreso', 500));
+miPresupuesto.agregarMovimiento(new Movimiento('Comida', 'gasto', 200));
+miPresupuesto.agregarMovimiento(new Movimiento('Transporte', 'gasto', 150));
+
+console.log("Resumen:", miPresupuesto.obtenerResumen());
+console.log("Balance:", miPresupuesto.calcularBalance());
+console.log("Ingresos:", miPresupuesto.obtenerTotalIngresos());
+console.log("Gastos:", miPresupuesto.obtenerTotalGastos());
+
+console.log("Buscar 'comida':", miPresupuesto.buscarMovimiento("comida"));
+console.log("Eliminar índice 2:", miPresupuesto.eliminarMovimiento(2));
+console.log("Validar presupuesto:", miPresupuesto.validarPresupuesto());
+
+console.log("Movimientos de ingreso:", miPresupuesto.obtenerMovimientosPorTipo("ingreso"));
+console.log("Movimientos de gasto:", miPresupuesto.obtenerMovimientosPorTipo("gasto"));
+
+console.log("Estadísticas:", miPresupuesto.obtenerEstadisticas());
+
+const categoriaComida = new Categoria("Comida", "gasto", 500);
+console.log("¿Puedo gastar 200 en comida?:", categoriaComida.puedeGastar(200));
+console.log("¿Puedo gastar 600 en comida?:", categoriaComida.puedeGastar(600));
